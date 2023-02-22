@@ -13,7 +13,7 @@ import java.util.List;
 public abstract class RecipeMapper {
     public abstract Recipe toRecipe(RecipeDto recipeDto);
     public abstract List<RecipeDto> toRecipeDtoList(List<Recipe> recipes);
-    @Mapping(target = "userId", ignore = true)
+    @Mapping(target = "user", ignore = true)
     public abstract RecipeDto toRecipeDto(Recipe recipe);
 
     @AfterMapping
