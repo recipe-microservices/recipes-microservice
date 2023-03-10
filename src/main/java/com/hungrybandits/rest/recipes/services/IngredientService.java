@@ -42,4 +42,8 @@ public class IngredientService {
         List<Ingredient> ingredientList = ingredientRepository.findIngredientsStartingWith(ingredientName.strip());
         return ingredientMapper.toIngredientDtoList(ingredientList);
     }
+
+    public void deleteIngredient(Long ingredientId) {
+        ingredientRepository.deleteById(ingredientId);
+    }
 }

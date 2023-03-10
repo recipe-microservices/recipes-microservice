@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-import com.hungrybandits.rest.clients.UserProxyDto;
+import com.hungrybandits.rest.clients.UserProxyDTO;
 import com.hungrybandits.rest.recipes.enums.ItemType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,7 +29,7 @@ public class RecipeDto {
     private String recipeImageAddress;
     private String cookingInstructions;
     private List<RecipeIngredientDto> recipeIngredients;
-    private UserProxyDto user;
+    private UserProxyDTO user;
 
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)

@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.hungrybandits.rest.clients.UserProxyDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,5 +37,18 @@ public class UserProxyDto {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     public void setDob(LocalDate dob) {
         this.dob = dob;
+    }
+
+    public static UserProxyDto hideRoles(UserProxyDTO userProxyDTO) {
+        return new UserProxyDto(
+                userProxyDTO.getId(),
+                userProxyDTO.getFirstName(),
+                userProxyDTO.getMiddleName(),
+                userProxyDTO.getLastName(),
+                userProxyDTO.getProfileName(),
+                userProxyDTO.getEmail(),
+                userProxyDTO.getUserSummary(),
+                userProxyDTO.getDob()
+        );
     }
 }
